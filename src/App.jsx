@@ -7,6 +7,8 @@ import AddTransaction from "./components/AddTransaction.jsx"
 import Header from "./components/Header.jsx"
 import styles from "./App.module.css"
 import Footer from "./components/Footer.jsx"
+import ContactCard from "./components/Contact.jsx"
+
 
 function App() {
   const [transactions, setTransactions] = useState(initialTransactions)
@@ -49,8 +51,7 @@ function App() {
 
             <Route path="/about" element={
               <div style={{ textAlign: 'center', marginTop: '50px', color: '#fff' }}>
-                <h2>Sobre o Money Hub</h2>
-                <p style={{color: 'grey'}}>Página em construção...</p>
+                <ContactCard />
               </div>
             } />
 
