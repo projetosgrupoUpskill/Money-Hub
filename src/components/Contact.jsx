@@ -17,6 +17,7 @@ const contacts = [
 function ContactCard () {
 const contactDetails = contacts.map (contact => 
 ( <div key={contact.id}>
+<img src={contact.profileImg} alt={contact.name} />
 <b>{contact.name}</b>
 <br />
 <p>Student Number:{contact.studentNumber}</p>
