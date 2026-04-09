@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom"
 import styles from "./Header.module.css"
-import money_hub_logo from "../assets/money_hub_logo.svg" 
+import money_hub_logo_cropped from "../assets/money_hub_logo_cropped.svg" 
 
 export default function Header() {
     return (
         <header className={styles.header}>
             {/* Ícone */}
             <div className={styles.logo}>
-                <img src={money_hub_logo} alt="Money Hub" className={styles.logoImage} />
+                <img src={money_hub_logo_cropped} alt="Money Hub" className={styles.logoImage} />
             </div>
 
             {/* Links */}
