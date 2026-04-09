@@ -13,7 +13,7 @@ function App() {
   const [filter, setFilter] = useState("all")
 
   const handleAdd = (description, amount, type) => {
-    setTransactions([...transactions, { id: Date.now(), description, amount, type }])
+    setTransactions([{ id: Date.now(), description, amount, type, date: new Date().toISOString() }, ...transactions])
   }
 
   const handleDelete = (id) => {
