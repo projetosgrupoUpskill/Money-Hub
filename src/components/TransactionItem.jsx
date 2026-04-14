@@ -1,5 +1,5 @@
 import { FiTrash } from "react-icons/fi";
-import styles from "./TransactionItem.module.css";
+import styles from "./styles/TransactionItem.module.css";
 
 export default function TransactionItem({ transaction, onDelete, isEven }) {
     const isIncome = transaction.type === "income";

@@ -1,5 +1,5 @@
 import TransactionItem from "./TransactionItem.jsx"
-import styles from "./TransactionList.module.css"
+import styles from "./styles/TransactionList.module.css";
 
 export default function TransactionList({ transactions, onDelete }) {
   return (

@@ -1,4 +1,4 @@
-import styles from "./Summary.module.css"
+import styles from "./styles/Summary.module.css"
 
 export default function Summary({ balance, income, expense, onCardClick }) {
     return (

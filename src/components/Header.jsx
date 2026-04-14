@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import styles from "./Header.module.css"
+import styles from "./styles/Header.module.css";
 import money_hub_logo_cropped from "../assets/money_hub_logo_cropped.svg" 
 
 export default function Header() {
