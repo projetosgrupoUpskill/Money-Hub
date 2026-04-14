@@ -1,7 +1,34 @@
-import TransactionItem from "./TransactionItem.jsx"
+import TransactionItem from "./TransactionItem.jsx";
 import styles from "./styles/TransactionList.module.css";
+import { useState, useEffect } from "react";
+import { getTransactions, deleteTransaction } from "../api.js";
 
-export default function TransactionList({ transactions, onDelete }) {
+export default function TransactionList() {
+  const [transactions, setTransactions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    getTransactions()
+      .then((data) => {
+        setTransactions(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError("Erro ao carregar transações");
+        setLoading(false);
+      });
+  }, []);
+
+  const handleDelete = (id) => {
+    deleteTransaction(id)
+      .then(() => setTransactions((prev) => prev.filter((t) => t.id !== id)))
+      .catch(() => setError("Erro ao apagar transação"));
+  };
+
+  if (loading) return <p>A carregar...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -10,13 +37,10 @@ export default function TransactionList({ transactions, onDelete }) {
 
       {transactions.length === 0 ? (
         <div className={styles.emptyState}>
-          <p className={styles.emptyText}>
-            Ainda não há transacções. 
-          </p>
+          <p className={styles.emptyText}>Ainda não há transacções.</p>
         </div>
       ) : (
         <>
-          {/* Cabeçalho da tabela */}
           <div className={styles.tableHeader}>
             <div className={`${styles.headerCell} ${styles.headerDescription}`}>Descrição</div>
             <div className={`${styles.headerCell} ${styles.headerDate}`}>Data</div>
@@ -24,19 +48,18 @@ export default function TransactionList({ transactions, onDelete }) {
             <div className={`${styles.headerCell} ${styles.headerActions}`}>Ações</div>
           </div>
 
-          {/* Lista de transações */}
           <div className={styles.scrollArea}>
-            {transactions.map((transaction, index) => (
+            {transactions.map((t, index) => (
               <TransactionItem
-                key={transaction.id}
-                transaction={transaction}
-                onDelete={onDelete}
-                isEven={index % 2 === 0} // para aplicar estilos alternados
+                key={t.id}
+                transaction={t}
+                onDelete={handleDelete}
+                isEven={index % 2 === 0}
               />
             ))}
           </div>
         </>
       )}
     </div>
-  )
+  );
 }
