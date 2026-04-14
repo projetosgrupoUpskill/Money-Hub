@@ -1,24 +1,6 @@
 {
   "transactions": [
     {
-      "id": "be478292-0364-4d6e-ac61-b835a20ea922",
-      "description": "Supermercado Continente",
-      "amount": -85.4,
-      "category": "alimentacao",
-      "type": "expense",
-      "date": "2024-03-10",
-      "createdAt": "2026-04-14T14:14:21.098Z"
-    },
-    {
-      "id": "822835b6-ac78-4a6b-9bea-3fbd5465929f",
-      "description": "Salário de Abril",
-      "amount": 1200,
-      "category": "outro",
-      "type": "income",
-      "date": "2024-03-01",
-      "createdAt": "2026-04-14T14:14:21.201Z"
-    },
-    {
       "id": "3394a5c9-cd93-4954-bc96-bbd0d0c7ac12",
       "description": "Renda do apartamento",
       "amount": -650,
@@ -44,6 +26,105 @@
       "type": "income",
       "date": "2024-03-12",
       "createdAt": "2026-04-14T14:14:21.570Z"
+    },
+    {
+      "id": "5e4ffd3d-f733-43af-ad71-7d0387722cde",
+      "description": "salario",
+      "amount": 1200,
+      "category": "outro",
+      "type": "income",
+      "date": "2026-04-14T14:53:44.626Z",
+      "createdAt": "2026-04-14T14:53:44.658Z"
+    },
+    {
+      "id": "b50ab17a-2690-44c9-867d-6546f332b630",
+      "description": "tv",
+      "amount": -50,
+      "category": "outro",
+      "type": "expense",
+      "date": "2026-04-14T14:53:58.228Z",
+      "createdAt": "2026-04-14T14:53:58.255Z"
+    },
+    {
+      "id": "c51eff65-3759-4c19-99cf-e54b6e83f845",
+      "description": "Salario",
+      "amount": 1200,
+      "category": "outro",
+      "type": "income",
+      "date": "2026-04-14T17:21:39.011Z",
+      "createdAt": "2026-04-14T17:21:39.049Z"
+    },
+    {
+      "id": "9987b847-5656-4009-a2a8-39d4d71dae8c",
+      "description": "Restaurante",
+      "amount": -20,
+      "category": "outro",
+      "type": "expense",
+      "date": "2026-04-14T17:22:04.539Z",
+      "createdAt": "2026-04-14T17:22:04.558Z"
+    },
+    {
+      "id": "31801c8a-68f7-4073-97b5-2aa899533f76",
+      "description": "Upskill",
+      "amount": 1200,
+      "category": "outro",
+      "type": "income",
+      "date": "2026-04-14T17:33:22.560Z",
+      "createdAt": "2026-04-14T17:33:22.592Z"
+    },
+    {
+      "id": "b6eaddf8-21fc-434c-98df-9dd97fc78c4b",
+      "description": "Supermercado Continente",
+      "amount": -85.4,
+      "category": "alimentacao",
+      "type": "expense",
+      "date": "2024-03-10",
+      "createdAt": "2026-04-14T17:46:04.711Z"
+    },
+    {
+      "id": "f3ffff36-32a6-42f8-b7a9-c76fcdb39476",
+      "description": "Salário de Abril",
+      "amount": 1200,
+      "category": "outro",
+      "type": "income",
+      "date": "2024-03-01",
+      "createdAt": "2026-04-14T17:46:04.723Z"
+    },
+    {
+      "id": "7f1757a6-04f1-45df-9361-731138448245",
+      "description": "Renda do apartamento",
+      "amount": -650,
+      "category": "habitacao",
+      "type": "expense",
+      "date": "2024-03-05",
+      "createdAt": "2026-04-14T17:46:04.743Z"
+    },
+    {
+      "id": "b9a507a6-8368-4bd0-83db-f17e81f37388",
+      "description": "Netflix",
+      "amount": -12.99,
+      "category": "lazer",
+      "type": "expense",
+      "date": "2024-03-08",
+      "createdAt": "2026-04-14T17:46:04.753Z"
+    },
+    {
+      "id": "3fc2cc92-32b5-4d0c-83bd-369c67e9be1d",
+      "description": "Freelance design",
+      "amount": 300,
+      "category": "outro",
+      "type": "income",
+      "date": "2024-03-12",
+      "createdAt": "2026-04-14T17:46:04.767Z"
+    },
+    {
+      "id": "436c5740-800a-4f4a-bbbb-9c9f265be65b",
+      "description": "Teste",
+      "amount": 100,
+      "category": "Lazer",
+      "type": "income",
+      "date": "2026-04-14",
+      "createdAt": "2026-04-14T18:05:03.882Z"
     }
   ]
 }
