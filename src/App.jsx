@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { initialTransactions } from "./mockData.js"
 import Summary from "./components/Summary.jsx"
 import TransactionList from "./components/TransactionList.jsx"
-import AddTransaction from "./components/AddTransaction.jsx"
+import AddTransaction from "./pages/AddTransaction.jsx"
 import Header from "./components/Header.jsx"
 import styles from "./App.module.css"
 import Footer from "./components/Footer.jsx"
