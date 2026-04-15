@@ -1,38 +1,25 @@
 import TransactionItem from "./TransactionItem.jsx";
 import styles from "./styles/TransactionList.module.css";
-import { useState, useEffect } from "react";
-import { getTransactions, deleteTransaction } from "../api.js";
+// Removemos o useState/useEffect daqui para seguir o padrão V2
 
-export default function TransactionList() {
-  const [transactions, setTransactions] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    getTransactions()
-      .then((data) => {
-        setTransactions(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError("Erro ao carregar transações");
-        setLoading(false);
-      });
-  }, []);
-
-  const handleDelete = (id) => {
-    deleteTransaction(id)
-      .then(() => setTransactions((prev) => prev.filter((t) => t.id !== id)))
-      .catch(() => setError("Erro ao apagar transação"));
-  };
-
-  if (loading) return <p>A carregar...</p>;
-  if (error) return <p>{error}</p>;
-
+export default function TransactionList({ transactions, onDelete, categoryFilterComponent, dateFilterComponent }) {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <h2 className={styles.headerTitle}>Lista de Transacções</h2>
+      </div>
+
+      <div className={styles.headerFilter}>
+        {/* Lado Esquerdo: Filtro de Data */}
+        <div className={styles.dateFilterGroup}>
+          <span className={styles.filterLabel}>Filtrar por data:</span>
+          {dateFilterComponent}
+        </div>
+
+        {/* Lado Direito: Filtro de Categoria */}
+        <div className={styles.categoryFilterGroup}>
+          {categoryFilterComponent}
+        </div>
       </div>
 
       {transactions.length === 0 ? (
@@ -53,7 +40,7 @@ export default function TransactionList() {
               <TransactionItem
                 key={t.id}
                 transaction={t}
-                onDelete={handleDelete}
+                onDelete={onDelete}
                 isEven={index % 2 === 0}
               />
             ))}

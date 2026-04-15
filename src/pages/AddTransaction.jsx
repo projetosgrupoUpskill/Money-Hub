@@ -1,24 +1,41 @@
 import { useState } from "react"
 import styles from "./AddTransaction.module.css"
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { createTransaction } from "../api";
 
 export default function AddTransaction({ onAdd }) {
     const [description, setDescription] = useState("")
     const [amount, setAmount] = useState("")
     const [type, setType] = useState("expense")
+    const queryClient = useQueryClient();
+
+    const mutation = useMutation({
+        mutationFn: createTransaction,
+        onSuccess: () => {
+          setDescription("");
+          setAmount("");
+          // Atualiza a lista no Dashboard automaticamente
+          queryClient.invalidateQueries(["transactions"]);
+        },
+      });
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-
-        if (!description.trim() || !amount || parseFloat(amount) <= 0) {
-            return
-        }
-
-        onAdd(description, parseFloat(amount), type)
-
-        setDescription("")
-        setAmount("")
-        setType("expense")
-    }
+        e.preventDefault();
+        if (!description || !amount) return;
+    
+        const numericValue = parseFloat(amount);
+        
+        // REGRA 3.2: Convenção de sinais (+/-)
+        const finalAmount = type === "expense" ? -Math.abs(numericValue) : Math.abs(numericValue);
+    
+        // CHAMADA: Agora 'mutation' existe e pode ser chamada aqui
+        mutation.mutate({
+          description,
+          amount: finalAmount,
+          date: new Date().toISOString(),
+          category: "outro"
+        });
+      };
 
     return (
         <div className={styles.card}>

@@ -18,6 +18,31 @@
   color: #4b5563;
 }
 
+.filterActionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaçamento entre as datas e o botão */
+  text-decoration: none;
+}
+
+.clearFiltersBtn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 10;
+  display: flex;
+  align-items: center;
+  background-color: #001f3f6c;
+  border-radius: 8px;
+}
+
+.clearFiltersBtn:hover {
+  opacity: 0.8;
+}
+
 /* Grid para TransactionList + AddTransaction */
 .gridTwoColumns {
   display: grid;
@@ -25,6 +50,8 @@
   gap: 2rem;
   margin-top: 2rem;
 }
+
+
 
 @media (min-width: 1024px) {
   .gridTwoColumns {

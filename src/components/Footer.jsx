@@ -8,6 +8,7 @@ export default function Footer() {
       <p className={styles.text}>
         &copy; {currentYear} Money Hub. Todos os direitos reservados.
       </p>
+      
     </footer>
   )
 }
