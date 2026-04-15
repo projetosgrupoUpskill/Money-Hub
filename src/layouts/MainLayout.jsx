@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import styles from "../App.module.css"; // Reaproveita os teus estilos de layout
+import styles from "../App.module.css";
 
 const MainLayout = () => {
   return (

@@ -1,32 +1,58 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import MainLayout from "./layouts/MainLayout";
 import Dashboard from "./pages/Dashboard";
 import AddTransaction from "./pages/AddTransaction";
 import ContactCard from "./pages/Contact";
+import {
+  PreferencesContext,
+  PreferencesProvider,
+} from "./context/PreferencesContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import Settings from "./pages/Settings";
+import { useContext, useEffect } from "react";
 
 // Criamos o cliente do React Query
 const queryClient = new QueryClient();
 
 function App() {
+/*   const { isDarkMode } = useContext(PreferencesContext);
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [isDarkMode]); */
+
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <Routes>
-          {/* O MainLayout contém o Header, Navbar e Footer */}
-          <Route path="/" element={<MainLayout />}>
-            
-            {/* Página Principal agora é o Dashboard */}
-            <Route index element={<Dashboard />} />
-            
-            <Route path="adicionar" element={<AddTransaction />} />
-            <Route path="about" element={<ContactCard />} />
-            
-            {/* Redirecionamento se a rota não existir */}
-            <Route path="*" element={<Navigate to="/" />} />
-          </Route>
-        </Routes>
-      </Router>
+      <ThemeProvider>
+        <PreferencesProvider>
+          <Router>
+            <Routes>
+              {/* O MainLayout contém o Header, Navbar e Footer */}
+              <Route path="/" element={<MainLayout />}>
+                {/* Painel - Página Principal */}
+                <Route index element={<Dashboard />} />
+
+                <Route path="adicionar" element={<AddTransaction />} />
+                <Route path="details" element={<History />} />
+                <Route path="about" element={<ContactCard />} />
+                <Route path="settings" element={<Settings />} />
+
+                {/* Redirecionamento se a rota não existir */}
+                <Route path="*" element={<Navigate to="/" />} />
+              </Route>
+            </Routes>
+          </Router>
+        </PreferencesProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

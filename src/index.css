@@ -110,3 +110,50 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* DarkMode */
+/* --- DARK MODE --- */
+body.dark {
+  /* 1. Variáveis principais do modo escuro */
+  --bg: #121212;          /* Fundo principal escuro */
+  --card-bg: #1f2028;     /* Fundo das caixas/cartões */
+  --text: #9ca3af;        /* Texto secundário escuro */
+  --text-h: #f3f4f6;      /* Texto principal mais branco */
+  --border: #374151;
+  
+  background-color: var(--bg);
+  color: var(--text-h);
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 2. Pintar os fundos de todos os cartões, containers e header */
+body.dark div[class*="card"],
+body.dark div[class*="container"],
+body.dark div[class*="Summary"],
+body.dark header {
+  background-color: var(--card-bg) !important;
+  color: var(--text-h) !important;
+  border-color: var(--border) !important;
+}
+
+/* 3. Forçar links do Menu e textos gerais a ficarem visíveis */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark span,
+body.dark a {
+  color: var(--text-h) !important;
+}
+
+/* 4. Ajustar as caixinhas de Input e Select (Data e Categoria) */
+body.dark input,
+body.dark select {
+  background-color: #374151 !important;
+  color: #f3f4f6 !important;
+  border: 1px solid #4b5563 !important;
+  color-scheme: dark; /* Faz o calendário do input date ficar escuro */
+}
