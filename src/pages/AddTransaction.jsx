@@ -1,22 +1,33 @@
 import { useState } from "react"
 import styles from "./AddTransaction.module.css"
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createTransaction } from "../api";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { createTransaction, getCategories } from "../api";
 
 export default function AddTransaction({ onAdd }) {
     const [description, setDescription] = useState("")
     const [amount, setAmount] = useState("")
     const [type, setType] = useState("expense")
+    const [category, setCategory] = useState("outro")
     const queryClient = useQueryClient();
+
+    const { data: categories = [] } = useQuery({
+        queryKey: ['categories'],
+        queryFn: getCategories,
+        });
 
     const mutation = useMutation({
         mutationFn: createTransaction,
         onSuccess: () => {
+        // Atualiza a lista no Dashboard automaticamente
+          queryClient.invalidateQueries(["transactions"]);
           setDescription("");
           setAmount("");
-          // Atualiza a lista no Dashboard automaticamente
-          queryClient.invalidateQueries(["transactions"]);
+          setCategory("outro");
+
         },
+        onError: () => {
+            alert('Erro ao adicionar transação. Tente novamente.');
+        }
       });
 
     const handleSubmit = (e) => {
@@ -25,15 +36,13 @@ export default function AddTransaction({ onAdd }) {
     
         const numericValue = parseFloat(amount);
         
-        // REGRA 3.2: Convenção de sinais (+/-)
         const finalAmount = type === "expense" ? -Math.abs(numericValue) : Math.abs(numericValue);
     
-        // CHAMADA: Agora 'mutation' existe e pode ser chamada aqui
         mutation.mutate({
           description,
           amount: finalAmount,
           date: new Date().toISOString(),
-          category: "outro"
+          category: category || "outro"
         });
       };
 
@@ -69,6 +78,22 @@ export default function AddTransaction({ onAdd }) {
                             className={styles.input}
                         />
                     </div>
+
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Categoria</label>
+                        <select 
+                            value={category} 
+                            onChange={(e) => setCategory(e.target.value)}
+                            className={styles.input} 
+                        >
+                            {categories.map(cat => (
+                                <option key={cat.slug || cat.id} value={cat.slug || cat.id}>
+                                    {cat.label || cat.name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
 
                     <div className={styles.formGroup}>
                         <label className={styles.label}>Tipo</label>

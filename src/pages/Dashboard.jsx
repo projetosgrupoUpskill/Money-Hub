@@ -20,12 +20,19 @@ function today() {
     return new Date().toISOString().split('T')[0]
 }
 
-const initialState = {
-    /* startDate: startOfMonth(), */
-    startDate: '', // Começa sem filtro de data
+/* const initialState = {
+     startDate: startOfMonth(), 
     endDate: today(),
     activeCategory: null,
     type: 'all',
+}; */
+
+// Definimos o estado inicial como vazio para mostrar TUDO por padrão
+const initialState = {
+    startDate: "", 
+    endDate: "",
+    activeCategory: null,
+    type: 'all', 
 };
 
 function filtersReducer(state, action) {
@@ -37,7 +44,7 @@ function filtersReducer(state, action) {
         case 'SET_TYPE':
             return { ...state, type: action.payload };
         case 'RESET':
-            return initialState;
+            return initialState; // Agora o reset limpa as datas também
         default:
             return state;
     }
@@ -77,24 +84,22 @@ const Dashboard = () => {
 
     const balance = income - expense;
 
-    const filteredTransactions = transactions.filter((t) => {
-
-        if (filter.type === 'income' && t.amount < 0) return false;
-        if (filter.type === 'expense' && t.amount > 0) return false;
-
-        // Exemplo de filtro por categoria se aplicável
-        if (filter.activeCategory && filter.activeCategory !== "all") {
-            return t.categoryId === filter.activeCategory || t.category === filter.activeCategory;
-        }
+    const filteredTransactions = transactions?.filter((t) => {
+        // 1. Filtro de Categoria
+        if (filter.activeCategory && t.category !== filter.activeCategory) return false;
+        
+        // 2. Filtro de Tipo (Income/Expense)
+        if (filter.type !== 'all' && t.type !== filter.type) return false;
+    
+        // 3. Filtro de Data (Só aplica se o usuário escolheu uma data)
         if (t.date) {
-            // Extrai apenas a parte "YYYY-MM-DD" da data da transação
             const transactionDate = t.date.split('T')[0];
-
             if (filter.startDate && transactionDate < filter.startDate) return false;
             if (filter.endDate && transactionDate > filter.endDate) return false;
         }
+    
         return true;
-    });
+    }) || [];
 
     return (
         <>

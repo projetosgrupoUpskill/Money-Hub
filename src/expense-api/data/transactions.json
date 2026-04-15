@@ -125,6 +125,24 @@
       "type": "income",
       "date": "2026-04-14",
       "createdAt": "2026-04-14T18:05:03.882Z"
+    },
+    {
+      "id": "fa3f7fb4-6022-4029-8993-c6a11a56af61",
+      "description": "Salario",
+      "amount": 3400,
+      "category": "outro",
+      "type": "income",
+      "date": "2026-04-15",
+      "createdAt": "2026-04-15T11:40:40.023Z"
+    },
+    {
+      "id": "7dd90b61-9cd8-42da-8c8d-a0d24b9e0cc9",
+      "description": "Hospital",
+      "amount": -200,
+      "category": "saude",
+      "type": "expense",
+      "date": "2026-04-15T13:21:16.805Z",
+      "createdAt": "2026-04-15T13:21:16.838Z"
     }
   ]
 }
