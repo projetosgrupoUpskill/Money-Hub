@@ -1,3 +1,4 @@
+import Card from "../components/Card";
 import styles from "./Contact.module.css";
 
 const contacts = [
@@ -42,10 +43,11 @@ function ContactCard() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h2 className={styles.headerTitle}>Money Hub foi desenvolvido por:</h2>
-      </div>
-      {contactDetails}
+      <Card title="Money Hub foi desenvolvido por:">
+        <div className={styles.contactsList}>
+          {contactDetails}
+        </div>
+      </Card>
     </div>
   );
 }

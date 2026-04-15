@@ -3,10 +3,8 @@ import { PreferencesContext } from "../context/PreferencesContext";
 import styles from "./styles/Summary.module.css";
 
 export default function Summary({ balance, income, expense, onCardClick }) {
-  // 1. Aceder aos dados do contexto conforme o guia
   const { currency, userName } = useContext(PreferencesContext);
 
-  // 2. Função de formatação automática baseada na moeda escolhida
   const formatCurrency = (value) => {
     return new Intl.NumberFormat("pt-PT", {
       style: "currency",
@@ -16,11 +14,8 @@ export default function Summary({ balance, income, expense, onCardClick }) {
 
   return (
     <div className={styles.summaryGrid}>
-      {/* Exibe a saudação se o userName estiver preenchido */}
       {userName && (
-        <h2
-          style={{ color: "white", gridColumn: "1 / -1", marginBottom: "10px" }}
-        >
+        <h2 style={{gridColumn: "1 / -1", marginBottom: "10px", color: "var(--text-h)", textAlign: "left"}}>
           Olá, {userName}!
         </h2>
       )}
@@ -29,27 +24,19 @@ export default function Summary({ balance, income, expense, onCardClick }) {
       <div
         className={`${styles.card} ${styles.balanceCard}`}
         onClick={() => onCardClick("all")}
-        style={{ cursor: "pointer" }}
       >
         <div className={styles.cardHeader}>
           <h3 className={styles.cardTitle}>Saldo Atual</h3>
         </div>
-        <p
-          className={`${styles.value} ${balance >= 0 ? styles.balancePositive : styles.balanceNegative}`}
-        >
+        <p className={`${styles.value} ${balance >= 0 ? styles.balancePositive : styles.balanceNegative}`}>
           {formatCurrency(balance)}
         </p>
       </div>
 
-      {/* Card de Receitas */}
+      {/* Card de Receitas (substituiu o style por uma nova classe incomeCard) */}
       <div
-        className={styles.card}
+        className={`${styles.card} ${styles.incomeCard}`}
         onClick={() => onCardClick("income")}
-        style={{
-          background: "#00A63E1A",
-          border: "1px solid #00A63E",
-          cursor: "pointer",
-        }}
       >
         <div className={styles.cardHeader}>
           <h3 className={styles.cardTitle}>Total de Receitas</h3>
@@ -59,15 +46,10 @@ export default function Summary({ balance, income, expense, onCardClick }) {
         </p>
       </div>
 
-      {/* Card de Despesas */}
+      {/* Card de Despesas (substituiu o style por uma nova classe expenseCard) */}
       <div
-        className={styles.card}
+        className={`${styles.card} ${styles.expenseCard}`}
         onClick={() => onCardClick("expense")}
-        style={{
-          background: "#E7000B1A",
-          border: "1px solid #E7000B",
-          cursor: "pointer",
-        }}
       >
         <div className={styles.cardHeader}>
           <h3 className={styles.cardTitle}>Total de Despesas</h3>

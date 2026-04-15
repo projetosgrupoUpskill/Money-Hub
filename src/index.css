@@ -111,49 +111,77 @@ code {
   background: var(--code-bg);
 }
 
-/* DarkMode */
-/* --- DARK MODE --- */
+/* ==========================================================
+   --- DARK MODE GERAL --- 
+========================================================== */
 body.dark {
-  /* 1. Variáveis principais do modo escuro */
-  --bg: #121212;          /* Fundo principal escuro */
-  --card-bg: #1f2028;     /* Fundo das caixas/cartões */
-  --text: #9ca3af;        /* Texto secundário escuro */
-  --text-h: #f3f4f6;      /* Texto principal mais branco */
-  --border: #374151;
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --card-bg-alt: #292929;
+  --text-h: #ffffff;
+  --text-muted: #a3a3a3;
+  --border: #3f3f46;
   
   background-color: var(--bg);
   color: var(--text-h);
 }
 
-body {
-  transition: background-color 0.3s, color 0.3s;
+body.dark, body.dark * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* 2. Pintar os fundos de todos os cartões, containers e header */
-body.dark div[class*="card"],
-body.dark div[class*="container"],
-body.dark div[class*="Summary"],
-body.dark header {
+/* 1. Tudo o que era texto escuro fica branco */
+body.dark h1, body.dark h2, body.dark h3, body.dark p, 
+body.dark span, body.dark a, body.dark label, body.dark b, body.dark div {
+  color: var(--text-h);
+}
+
+/* Textos descritivos ficam em cinza claro para contraste */
+body.dark [class*="Desc"], body.dark [class*="detail"], body.dark [class*="date"] {
+  color: var(--text-muted) !important;
+}
+
+/* 2. Fundos de cartões, listas e página ficam escuros */
+body.dark [class*="card"], body.dark [class*="Card"], 
+body.dark [class*="container"], 
+body.dark header, body.dark [class*="settingItem"],
+body.dark [class*="rowEven"] {
   background-color: var(--card-bg) !important;
-  color: var(--text-h) !important;
   border-color: var(--border) !important;
 }
 
-/* 3. Forçar links do Menu e textos gerais a ficarem visíveis */
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark p,
-body.dark span,
-body.dark a {
-  color: var(--text-h) !important;
+body.dark [class*="settingItem"] {
+  background-color: #252424 !important;
 }
 
-/* 4. Ajustar as caixinhas de Input e Select (Data e Categoria) */
-body.dark input,
-body.dark select {
-  background-color: #374151 !important;
-  color: #f3f4f6 !important;
-  border: 1px solid #4b5563 !important;
-  color-scheme: dark; /* Faz o calendário do input date ficar escuro */
+/* Fundo alternativo para cabeçalho da tabela e linhas ímpares */
+body.dark [class*="tableHeader"], body.dark [class*="rowOdd"] {
+  background-color: var(--card-bg-alt) !important;
+  border-color: var(--border) !important;
+}
+
+/* Campos de preenchimento (Inputs e Selects) */
+body.dark input, body.dark select, body.dark [class*="searchInput"] {
+  background-color: var(--card-bg-alt) !important;
+  color: var(--text-h) !important;
+  border: 1px solid var(--border) !important;
+  color-scheme: dark; /* Passa o calendário nativo para modo noturno */
+}
+
+body.dark [class*="cardTitle"], body.dark [class*="cardHeader"] {
+  background-color: #123022!important; 
+  border: #ffff;
+}
+
+body.dark [class*="tableHeader"] {
+  background-color: #3131329d !important;
+  color: white !important;
+}
+
+body.dark [class*= "headerDescription"] {
+  color: white !important;
+}
+
+body.dark [class*= "filterCard"] {
+  background-color: #1212124d !important;
 }

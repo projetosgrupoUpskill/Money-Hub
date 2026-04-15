@@ -2,6 +2,7 @@ import { useState } from "react"
 import styles from "./AddTransaction.module.css"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createTransaction, getCategories } from "../api";
+import Card from "../components/Card";
 
 export default function AddTransaction({ onAdd }) {
     const [description, setDescription] = useState("")
@@ -48,9 +49,7 @@ export default function AddTransaction({ onAdd }) {
 
     return (
         <div className={styles.card}>
-            <div className={styles.cardHeader}>
-                <h2 className={styles.cardTitle}>Adicionar Transacção</h2>
-            </div>
+            <Card title="Adicionar Transacção">
 
             <div className={styles.cardBody}>
                 <form onSubmit={handleSubmit} className={styles.form}>
@@ -127,7 +126,8 @@ export default function AddTransaction({ onAdd }) {
                         Adicionar
                     </button>
                 </form>
-            </div>
+                </div>
+            </Card>
         </div>
     )
 }

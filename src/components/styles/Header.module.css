@@ -40,3 +40,26 @@
     color: white;
     background-color: #0F2E22;
   }
+
+  .themeToggleBtn {
+    background: transparent !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0e447b; /* Escuro no tema claro */
+    padding: 0.5rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+    border-color: #0e447b;
+    transition: transform 0.2s ease, color 0.3s ease;
+  }
+  
+  .themeToggleBtn:hover {
+    transform: scale(1.1); /* Um efeito subtil ao passar o rato */
+  }
+
+  :global(body.dark) .themeToggleBtn {
+    color: #ebe80a !important;
+    border-color: #ebe80a;
+  }

@@ -16,6 +16,7 @@ import {
 import { ThemeProvider } from "./context/ThemeContext";
 import Settings from "./pages/Settings";
 import { useContext, useEffect } from "react";
+import Details from "./pages/History";
 
 // Criamos o cliente do React Query
 const queryClient = new QueryClient();
@@ -42,7 +43,7 @@ function App() {
                 <Route index element={<Dashboard />} />
 
                 <Route path="adicionar" element={<AddTransaction />} />
-                <Route path="details" element={<History />} />
+                <Route path="details" element={<Details/>} />
                 <Route path="about" element={<ContactCard />} />
                 <Route path="settings" element={<Settings />} />
 

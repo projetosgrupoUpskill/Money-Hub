@@ -7,23 +7,7 @@
   margin: 2rem auto;
 }
 
-.header {
-  background-color: #001f3f;
-  padding: 1rem 1.5rem;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-.headerTitle {
-  font-size: 1rem;
-  color: white;
-  margin: 0;
-}
-
 .card {
-  display: flexbox;
-  align-items: center;
-  gap: 1rem;
   padding: 1.5rem;
   border-bottom: 1px solid #e5e7eb;
 }

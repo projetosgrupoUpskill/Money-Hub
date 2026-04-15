@@ -1,26 +1,11 @@
 import TransactionItem from "./TransactionItem.jsx";
 import styles from "./styles/TransactionList.module.css";
-// Removemos o useState/useEffect daqui para seguir o padrão V2
+import Card from "./Card.jsx";
 
 export default function TransactionList({ transactions, onDelete, categoryFilterComponent, dateFilterComponent }) {
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h2 className={styles.headerTitle}>Lista de Transacções</h2>
-      </div>
-
-      <div className={styles.headerFilter}>
-        {/* Lado Esquerdo: Filtro de Data */}
-        <div className={styles.dateFilterGroup}>
-          <span className={styles.filterLabel}>Filtrar por data:</span>
-          {dateFilterComponent}
-        </div>
-
-        {/* Lado Direito: Filtro de Categoria */}
-        <div className={styles.categoryFilterGroup}>
-          {categoryFilterComponent}
-        </div>
-      </div>
+      <Card title="Lista de Transacções">
 
       {transactions.length === 0 ? (
         <div className={styles.emptyState}>
@@ -47,6 +32,7 @@ export default function TransactionList({ transactions, onDelete, categoryFilter
           </div>
         </>
       )}
+       </Card>
     </div>
   );
 }

@@ -1,43 +1,65 @@
-// pages/Settings.jsx - o formulário de definições
 import { useContext } from "react";
 import { PreferencesContext } from "../context/PreferencesContext";
+import styles from "../components/styles/Settings.module.css";
+import Card from "../components/Card";
 
 export default function Settings() {
-  const { isDarkMode, toggleTheme, currency, setCurrency, userName, setUserName } =
+  const { theme, toggleTheme, currency, setCurrency, userName, setUserName } =
     useContext(PreferencesContext);
 
   return (
-    <div>
-      <h2>Definições</h2>
+    <div className={styles.settingsContainer}>
+      <Card title="Definições">
+        
+        {/* Tema Visual */}
+        <div className={styles.settingItem}>
+          <div className={styles.settingText}>
+            <h3 className={styles.settingTitle}>Ativar Dar kMode</h3>
+            <p className={styles.settingDesc}>Aparência da interface</p>
+          </div>
+          <button 
+            className={styles.toggleSwitch} 
+            data-active={theme === "dark"}
+            onClick={toggleTheme}
+            aria-label="Alternar tema"
+          >
+          </button>
+        </div>
 
-      {/* Tema */}
-      <section>
-        <h3>Tema</h3>
-        <button onClick={toggleTheme}>
-          {isDarkMode ? "Mudar para Light" : "Mudar para Dark"}
-        </button>
-      </section>
+        {/* Moeda Principal */}
+        <div className={styles.settingItem}>
+          <div className={styles.settingText}>
+            <h3 className={styles.settingTitle}>Moeda</h3>
+            <p className={styles.settingDesc}>Formato da Moeda</p>
+          </div>
+          <select 
+            className={styles.select} 
+            value={currency} 
+            onChange={(e) => setCurrency(e.target.value)}
+          >
+            <option value="EUR">EUR - Euro (€)</option>
+            <option value="USD">USD - Dólar ($)</option>
+            <option value="GBP">GBP - Libra (£)</option>
+            <option value="BRL">BRL - Real (R$)</option>
+          </select>
+        </div>
 
-      {/* Moeda */}
-      <section>
-        <h3>Moeda</h3>
-        <select value={currency} onChange={(e) => setCurrency(e.target.value)}>
-          <option value="EUR">EUR - Euro</option>
-          <option value="USD">USD - Dólar</option>
-          <option value="GBP">GBP - Libra</option>
-        </select>
-      </section>
+        {/* Nome do Utilizador */}
+        <div className={styles.settingItem}>
+          <div className={styles.settingText}>
+            <h3 className={styles.settingTitle}>Nome de Utilizador</h3>
+            <p className={styles.settingDesc}>Como devemos te chamar?</p>
+          </div>
+          <input
+            className={styles.input}
+            type="text"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            placeholder="Digite o teu nome..."
+          />
+        </div>
 
-      {/* Nome */}
-      <section>
-        <h3>O teu nome</h3>
-        <input
-          type="text"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-          placeholder="Qual seu nome?"
-        />
-      </section>
+      </ Card>
     </div>
   );
 }

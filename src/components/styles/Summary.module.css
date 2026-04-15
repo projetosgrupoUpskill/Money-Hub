@@ -14,6 +14,7 @@
 
 .balanceCard {
   border: 2px solid #001f3f;
+
 }
 
 .cardHeader {
@@ -40,15 +41,64 @@
   color: #dc2626;
 }
 
-.incomeValue {
-  color: #16a34a;
+/* Estilos Base (Light Mode) para os Cartões */
+.balanceCard {
+  cursor: pointer;
+  background-color: white;
 }
 
-.expenseValue {
-  color: #dc2626;
+.incomeCard {
+  cursor: pointer;
+  background-color: #00A63E1A; /* Verde clarinho */
+  border: 1px solid #00A63E;
+  color: #00A63E ;
 }
+
+.expenseCard {
+  cursor: pointer;
+  background-color: #E7000B1A; /* Vermelho clarinho */
+  border: 1px solid #E7000B;
+  color: #E7000B;
+}
+
 @media (min-width: 768px) {
   .summaryGrid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+
+
+/* =======================================================
+   DARK MODE PARA O SUMMARY
+======================================================= */
+:global(body.dark) .incomeCard {
+  background-color: rgba(74, 222, 128, 0.15) !important;
+  border-color: #4ade80 !important;
+}
+
+:global(body.dark) .incomeCard .cardTitle,
+:global(body.dark) .incomeValue {
+  color: #4ade80 !important;
+}
+
+:global(body.dark) .expenseCard {
+  background-color: rgba(248, 113, 113, 0.15) !important;
+  border-color: #f87171 !important;
+}
+
+:global(body.dark) .expenseCard .cardTitle,
+:global(body.dark) .expenseValue {
+  color: #f87171 !important; 
+}
+
+/* NOVA REGRA A ADICIONAR AQUI: Remove o fundo escuro do cabeçalho de dentro dos cartões */
+:global(body.dark) .cardHeader,
+:global(body.dark) .cardTitle {
+  background-color: transparent !important;
+}
+
+:global(body.dark) .balanceCard {
+  background-color: rgba(173, 178, 180, 0.489) !important;
+  border-color: #e3dbdb !important;
 }

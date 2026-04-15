@@ -2,18 +2,20 @@ import React from 'react';
 
 export default function DateRangePicker({ startDate, endDate, onDateChange }) {
   return (
-    <div style={{ display: 'flex', gap: '10px', marginBottom: '20px', color: 'white' }}>
+    <div >
       <label> De: 
         <input 
         type="date" 
         value={startDate} 
-        onChange={(e) => onDateChange(e.target.value, endDate)} />
+        onChange={(e) => onDateChange(e.target.value, endDate)} 
+        style={{ marginLeft: '0.5rem'}}/>
       </label>
       <label> Até: 
         <input 
         type="date" 
         value={endDate} 
-        onChange={(e) => onDateChange(startDate, e.target.value)} />
+        onChange={(e) => onDateChange(startDate, e.target.value)} 
+        style={{ marginLeft: '0.5rem'}}/>
       </label>
     </div>
   );
