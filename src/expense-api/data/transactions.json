@@ -100,15 +100,6 @@
       "createdAt": "2026-04-16T14:44:39.941Z"
     },
     {
-      "id": "5f87276f-b866-471d-8db6-f15974015efb",
-      "description": "Hospital",
-      "amount": -450,
-      "category": "saude",
-      "type": "expense",
-      "date": "2026-04-16T14:44:56.882Z",
-      "createdAt": "2026-04-16T14:44:56.903Z"
-    },
-    {
       "id": "bb6bf823-9919-4646-b4d5-874f9eda4524",
       "description": "Passe mensal",
       "amount": -40,
@@ -152,6 +143,24 @@
       "type": "income",
       "date": "2026-04-16T14:56:37.681Z",
       "createdAt": "2026-04-16T14:56:37.708Z"
+    },
+    {
+      "id": "52b03fd6-7e05-437b-a5f3-921659fff3b1",
+      "description": "Óculos de Sol",
+      "amount": -50,
+      "category": "compras",
+      "type": "expense",
+      "date": "2026-04-16T21:01:22.501Z",
+      "createdAt": "2026-04-16T21:01:22.533Z"
+    },
+    {
+      "id": "c2248330-a6ec-482d-b3ec-0f75c13f4d9e",
+      "description": "Devolução - Óculos",
+      "amount": 50,
+      "category": "compras",
+      "type": "income",
+      "date": "2026-04-16T21:01:46.919Z",
+      "createdAt": "2026-04-16T21:01:46.948Z"
     }
   ]
 }

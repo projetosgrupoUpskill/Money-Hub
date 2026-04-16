@@ -38,6 +38,12 @@ const initialState = {
   type: "all",
 };
 
+// Reducer para gerenciar o estado dos filtros de forma centralizada, 
+// permitindo que os diferentes componentes de filtro atualizem o estado 
+// de maneira consistente e fácil de manter. O reducer lida com ações para definir a pesquisa, 
+// o intervalo de datas, a categoria ativa e o tipo de transação (receita, despesa ou todas), 
+// além de uma ação para resetar todos os filtros para o estado inicial.
+
 function filtersReducer(state, action) {
   switch (action.type) {
     case "SET_SEARCH":
@@ -56,8 +62,13 @@ function filtersReducer(state, action) {
 }
 
 const Details = () => {
-  const queryClient = useQueryClient();
+  const queryClient = useQueryClient(); // Instância do QueryClient para gerenciar o cache e as mutações 
+  // de dados com React Query
   const [filter, dispatch] = useReducer(filtersReducer, initialState);
+  // Utiliza o hook useQuery para buscar as transações e categorias da API,
+  // gerenciando os estados de carregamento e erro. O hook useMutation é utilizado para lidar 
+  // com a exclusão de transações, invalidando a cache de transações após uma exclusão bem-sucedida 
+  // para garantir que a lista seja atualizada corretamente.
 
   const {
     data: transactions = [],
@@ -76,7 +87,8 @@ const Details = () => {
   const deleteMutation = useMutation({
     mutationFn: deleteTransaction,
     onSuccess: () => queryClient.invalidateQueries(["transactions"]),
-  });
+  }); // Configura a mutação para exclusão de transações, invalidando a cache de transações 
+  // após uma exclusão bem-sucedida para garantir que a lista seja atualizada corretamente.
 
   if (isLoading) return <p style={{ color: "white" }}>A carregar...</p>;
   if (isError) return <p style={{ color: "red" }}>Erro ao ligar à API.</p>;
@@ -158,7 +170,7 @@ const Details = () => {
               startDate={filter.startDate}
               endDate={filter.endDate}
               onDateChange={(start, end) =>
-                dispatch({ type: "SET_DATE_RANGE", start, end })
+                dispatch({ type: "SET_DATE_RANGE", start, end }) //dispatch para atualizar o intervalo de datas no estado do filtro
               }
             />
           </div>

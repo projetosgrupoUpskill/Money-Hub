@@ -135,3 +135,9 @@ export default function AddTransaction({ onAdd }) {
         </div>
     )
 }
+
+// Página de Adicionar Transação (AddTransaction) que permite aos usuários inserir detalhes de uma nova transação,
+// como descrição, valor, categoria e tipo (receita ou despesa). O componente utiliza a mutação do React Query para 
+// enviar os dados para a API e atualizar a lista de transações no Dashboard automaticamente após uma adição bem-sucedida. 
+// O formulário inclui validação básica para garantir que os campos obrigatórios sejam preenchidos e que o valor seja um 
+// número positivo.

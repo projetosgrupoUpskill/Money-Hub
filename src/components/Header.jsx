@@ -1,3 +1,9 @@
+//Header componente que exibe o logotipo do aplicativo e os links de navegação para as diferentes páginas 
+// (Painel, Detalhes, Sobre Nós, Definições). Ele também inclui um botão para alternar entre os temas claro 
+// e escuro, utilizando o ThemeContext para gerenciar o estado do tema. O logotipo muda de acordo com o tema 
+// selecionado, proporcionando uma experiência visual consistente. Os links de navegação permitem que os usuários 
+// acessem facilmente as diferentes seções do aplicativo.
+
 import { Link } from "react-router-dom";
 import styles from "./styles/Header.module.css";
 import logo_light from "../assets/logo_light.svg";

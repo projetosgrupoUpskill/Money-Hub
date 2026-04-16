@@ -7,16 +7,10 @@ const MainLayout = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        {/* Barra de Topo: Logo à esquerda, Menu à direita */}
-        <header>
           <Header />
-        </header>
-
-        {/* Aqui é onde as páginas (Dashboard, AddTransaction) vão "aparecer" */}
         <main style={{ minHeight: '70vh' }}>
           <Outlet />
         </main>
-
         <Footer />
       </div>
     </div>
