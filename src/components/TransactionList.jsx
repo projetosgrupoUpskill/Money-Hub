@@ -1,8 +1,12 @@
 import TransactionItem from "./TransactionItem.jsx";
 import styles from "./styles/TransactionList.module.css";
 import Card from "./Card.jsx";
+import { ThemeContext } from "../context/ThemeContext.jsx";
+import { useContext } from "react";
 
 export default function TransactionList({ transactions, onDelete, categoryFilterComponent, dateFilterComponent }) {
+
+  const { theme } = useContext(ThemeContext);
   
   const sortedTransactions = [...transactions].sort((a, b) => { 
     return new Date(b.date) - new Date(a.date);
@@ -25,7 +29,7 @@ export default function TransactionList({ transactions, onDelete, categoryFilter
             <div className={`${styles.headerCell} ${styles.headerActions}`}>Ações</div>
           </div>
 
-          <div className={styles.scrollArea}>
+          <div className={`${styles.scrollArea} ${theme === "dark" ? styles.scrollAreaDark : styles.scrollAreaLight}`}>
             {sortedTransactions.map((t, index) => (
               <TransactionItem
                 key={t.id}
