@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { PreferencesContext } from "../context/PreferencesContext";
+import { ThemeContext } from "../context/ThemeContext";
 import styles from "../components/styles/Settings.module.css";
 import Card from "../components/Card";
 
 export default function Settings() {
-  const { theme, toggleTheme, currency, setCurrency, userName, setUserName } =
+  const { currency, setCurrency, userName, setUserName } =
     useContext(PreferencesContext);
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <div className={styles.settingsContainer}>
