@@ -7,7 +7,7 @@
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
   width: 100%;
@@ -44,13 +44,13 @@
 }
 
 .searchInput:focus {
-  border-color: #007bff; 
+  border-color: #007bff;
 }
 
 .dropdownsContainer {
   display: grid;
-  grid-template-columns: 1fr 2fr auto; 
-  align-items: flex-end; 
+  grid-template-columns: 1fr 2fr auto;
+  align-items: flex-end;
   gap: 2rem;
 }
 
@@ -58,7 +58,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  text-align: left; 
+  text-align: left;
 }
 
 .dropdownGroup input[type="date"] {
@@ -70,9 +70,9 @@
   color: #333;
   outline: none;
   box-sizing: border-box;
-  height: 42px; 
+  height: 42px;
   font-family: inherit;
-  flex: 1; 
+  flex: 1;
   transition: border-color 0.2s ease-in-out;
 }
 
@@ -82,13 +82,13 @@
   font-weight: 600;
   color: #555;
   margin-left: 2px;
-  line-height: 1; 
+  line-height: 1;
   margin-bottom: 0.2rem;
 }
 
 /* --- Padronização do Select da Categoria --- */
 .dropdownGroup select {
-  height: 42px; 
+  height: 42px;
   padding: 0 0.8rem;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -109,9 +109,9 @@
 
 .dropdownGroup > div {
   display: flex;
-  align-items: center;  
-  gap: 0.5rem;          
-  height: 42px;         
+  align-items: center;
+  gap: 0.5rem;
+  height: 42px;
 }
 
 .dropdownLabel {
@@ -136,25 +136,28 @@
 /* Novo estilo para o botão Limpar Filtros */
 .clearBtn {
   padding: 0.6rem 1.5rem;
-  background-color: #ef4444; 
+  background-color: #ef4444;
   color: #ffffff;
   border: none;
   border-radius: 6px;
   font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
-  height: 42px; 
+  height: 42px;
   transition: background-color 0.2s ease-in-out;
 }
 
 .clearBtn:hover {
-  background-color: #dc2626; 
+  background-color: #dc2626;
 }
+
+/* .global (body.dark) .chartSection{
+  color: #ffffff;
+} */
 
 @media (max-width: 768px) {
   .dropdownsContainer {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     align-items: stretch;
   }
 }
-

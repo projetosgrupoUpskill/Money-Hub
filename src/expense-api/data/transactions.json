@@ -125,6 +125,42 @@
       "type": "income",
       "date": "2026-04-14",
       "createdAt": "2026-04-14T18:05:03.882Z"
+    },
+    {
+      "id": "5e0b248d-87c1-4a4b-8856-e0dfaeda8e5c",
+      "description": "Teste",
+      "amount": -100,
+      "category": "viagens",
+      "type": "expense",
+      "date": "2026-04-16T13:51:35.370Z",
+      "createdAt": "2026-04-16T13:51:35.394Z"
+    },
+    {
+      "id": "a4bb3004-b0cb-4065-a17e-4c4822e4fb44",
+      "description": "Reembolso Plano de Saúde",
+      "amount": 1400,
+      "category": "saude",
+      "type": "income",
+      "date": "2026-04-16T13:56:46.686Z",
+      "createdAt": "2026-04-16T13:56:46.703Z"
+    },
+    {
+      "id": "66106923-6091-4060-a5bd-aa1db23d941e",
+      "description": "Reembolso Seguro Saúde",
+      "amount": 1000,
+      "category": "saude",
+      "type": "income",
+      "date": "2026-04-16T13:57:15.963Z",
+      "createdAt": "2026-04-16T13:57:15.979Z"
+    },
+    {
+      "id": "a33cfe41-d164-46e1-917e-65e1baab97d9",
+      "description": "Vale Alimentação",
+      "amount": 250,
+      "category": "alimentacao",
+      "type": "income",
+      "date": "2026-04-16T13:57:28.835Z",
+      "createdAt": "2026-04-16T13:57:28.857Z"
     }
   ]
 }
