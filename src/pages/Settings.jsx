@@ -14,7 +14,7 @@ export default function Settings() {
         {/* Tema Visual */}
         <div className={styles.settingItem}>
           <div className={styles.settingText}>
-            <h3 className={styles.settingTitle}>Ativar Dar kMode</h3>
+            <h3 className={styles.settingTitle}>Ativar Dark Mode</h3>
             <p className={styles.settingDesc}>Aparência da interface</p>
           </div>
           <button 

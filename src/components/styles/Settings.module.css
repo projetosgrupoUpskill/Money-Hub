@@ -6,14 +6,12 @@
 
 .settingItem {
     background-color: #f8f9fa;
-    margin-top: 20px;
+    margin: 20px;
     padding: 1.5rem 2rem;
     border-radius: 12px;
-    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
 }
 
 .settingText {
@@ -42,14 +40,14 @@
     height: 38px;
     padding: 0 0.8rem;
     border: 1px solid #d1d5db;
-    /* Borda bem subtil */
     border-radius: 6px;
     font-size: 0.9rem;
     background-color: #fff;
     color: #333;
     outline: none;
-    min-width: 220px;
+    min-width: 400px;
     /* Largura base para se alinharam bem */
+    max-width: 430px;
     font-family: inherit;
 }
 
