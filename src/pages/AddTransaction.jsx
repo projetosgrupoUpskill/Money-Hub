@@ -62,6 +62,7 @@ export default function AddTransaction({ onAdd }) {
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             className={styles.input}
+                            required
                         />
                     </div>
 
@@ -75,6 +76,7 @@ export default function AddTransaction({ onAdd }) {
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                             className={styles.input}
+                            required
                         />
                     </div>
 
@@ -105,6 +107,7 @@ export default function AddTransaction({ onAdd }) {
                                     value="income"
                                     checked={type === "income"}
                                     onChange={(e) => setType(e.target.value)}
+                                    required
                                 />
                                 <span className={styles.radioLabel}>Receita</span>
                             </label>
@@ -116,6 +119,7 @@ export default function AddTransaction({ onAdd }) {
                                     value="expense"
                                     checked={type === "expense"}
                                     onChange={(e) => setType(e.target.value)}
+                                    required
                                 />
                                 <span className={styles.radioLabel}>Despesa</span>
                             </label>

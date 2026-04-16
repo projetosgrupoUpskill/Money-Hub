@@ -19,60 +19,6 @@
       "createdAt": "2026-04-14T14:14:21.443Z"
     },
     {
-      "id": "a79d4e3f-53cc-4626-a83e-a1990e4f83f4",
-      "description": "Freelance design",
-      "amount": 300,
-      "category": "outro",
-      "type": "income",
-      "date": "2024-03-12",
-      "createdAt": "2026-04-14T14:14:21.570Z"
-    },
-    {
-      "id": "5e4ffd3d-f733-43af-ad71-7d0387722cde",
-      "description": "salario",
-      "amount": 1200,
-      "category": "outro",
-      "type": "income",
-      "date": "2026-04-14T14:53:44.626Z",
-      "createdAt": "2026-04-14T14:53:44.658Z"
-    },
-    {
-      "id": "b50ab17a-2690-44c9-867d-6546f332b630",
-      "description": "tv",
-      "amount": -50,
-      "category": "outro",
-      "type": "expense",
-      "date": "2026-04-14T14:53:58.228Z",
-      "createdAt": "2026-04-14T14:53:58.255Z"
-    },
-    {
-      "id": "c51eff65-3759-4c19-99cf-e54b6e83f845",
-      "description": "Salario",
-      "amount": 1200,
-      "category": "outro",
-      "type": "income",
-      "date": "2026-04-14T17:21:39.011Z",
-      "createdAt": "2026-04-14T17:21:39.049Z"
-    },
-    {
-      "id": "9987b847-5656-4009-a2a8-39d4d71dae8c",
-      "description": "Restaurante",
-      "amount": -20,
-      "category": "outro",
-      "type": "expense",
-      "date": "2026-04-14T17:22:04.539Z",
-      "createdAt": "2026-04-14T17:22:04.558Z"
-    },
-    {
-      "id": "31801c8a-68f7-4073-97b5-2aa899533f76",
-      "description": "Upskill",
-      "amount": 1200,
-      "category": "outro",
-      "type": "income",
-      "date": "2026-04-14T17:33:22.560Z",
-      "createdAt": "2026-04-14T17:33:22.592Z"
-    },
-    {
       "id": "b6eaddf8-21fc-434c-98df-9dd97fc78c4b",
       "description": "Supermercado Continente",
       "amount": -85.4,
@@ -80,15 +26,6 @@
       "type": "expense",
       "date": "2024-03-10",
       "createdAt": "2026-04-14T17:46:04.711Z"
-    },
-    {
-      "id": "f3ffff36-32a6-42f8-b7a9-c76fcdb39476",
-      "description": "Salário de Abril",
-      "amount": 1200,
-      "category": "outro",
-      "type": "income",
-      "date": "2024-03-01",
-      "createdAt": "2026-04-14T17:46:04.723Z"
     },
     {
       "id": "7f1757a6-04f1-45df-9361-731138448245",
@@ -107,33 +44,6 @@
       "type": "expense",
       "date": "2024-03-08",
       "createdAt": "2026-04-14T17:46:04.753Z"
-    },
-    {
-      "id": "3fc2cc92-32b5-4d0c-83bd-369c67e9be1d",
-      "description": "Freelance design",
-      "amount": 300,
-      "category": "outro",
-      "type": "income",
-      "date": "2024-03-12",
-      "createdAt": "2026-04-14T17:46:04.767Z"
-    },
-    {
-      "id": "436c5740-800a-4f4a-bbbb-9c9f265be65b",
-      "description": "Teste",
-      "amount": 100,
-      "category": "Lazer",
-      "type": "income",
-      "date": "2026-04-14",
-      "createdAt": "2026-04-14T18:05:03.882Z"
-    },
-    {
-      "id": "5e0b248d-87c1-4a4b-8856-e0dfaeda8e5c",
-      "description": "Teste",
-      "amount": -100,
-      "category": "viagens",
-      "type": "expense",
-      "date": "2026-04-16T13:51:35.370Z",
-      "createdAt": "2026-04-16T13:51:35.394Z"
     },
     {
       "id": "a4bb3004-b0cb-4065-a17e-4c4822e4fb44",
@@ -161,6 +71,87 @@
       "type": "income",
       "date": "2026-04-16T13:57:28.835Z",
       "createdAt": "2026-04-16T13:57:28.857Z"
+    },
+    {
+      "id": "f0edc452-766e-4764-bee9-aec9adba39ac",
+      "description": "Salário",
+      "amount": 3200,
+      "category": "salario",
+      "type": "income",
+      "date": "2026-04-16T14:43:24.857Z",
+      "createdAt": "2026-04-16T14:43:24.884Z"
+    },
+    {
+      "id": "0181f50d-679e-43f1-b457-ec4fc7a72b67",
+      "description": "Passagem PT-BR",
+      "amount": -600,
+      "category": "viagens",
+      "type": "expense",
+      "date": "2026-04-16T14:44:25.732Z",
+      "createdAt": "2026-04-16T14:44:25.751Z"
+    },
+    {
+      "id": "e339a95a-0a5e-4586-8cb1-23e58b322a6c",
+      "description": "Gasolina",
+      "amount": -100,
+      "category": "transporte",
+      "type": "expense",
+      "date": "2026-04-16T14:44:39.923Z",
+      "createdAt": "2026-04-16T14:44:39.941Z"
+    },
+    {
+      "id": "5f87276f-b866-471d-8db6-f15974015efb",
+      "description": "Hospital",
+      "amount": -450,
+      "category": "saude",
+      "type": "expense",
+      "date": "2026-04-16T14:44:56.882Z",
+      "createdAt": "2026-04-16T14:44:56.903Z"
+    },
+    {
+      "id": "bb6bf823-9919-4646-b4d5-874f9eda4524",
+      "description": "Passe mensal",
+      "amount": -40,
+      "category": "transporte",
+      "type": "expense",
+      "date": "2026-04-16T14:46:27.784Z",
+      "createdAt": "2026-04-16T14:46:27.812Z"
+    },
+    {
+      "id": "82b2230c-e854-46fc-b0e3-307b77024aae",
+      "description": "Balada",
+      "amount": -150,
+      "category": "lazer",
+      "type": "expense",
+      "date": "2026-04-16T14:46:55.373Z",
+      "createdAt": "2026-04-16T14:46:55.397Z"
+    },
+    {
+      "id": "069479bb-0eff-49a7-b77a-266e87c44c88",
+      "description": "Mensalidade faculdade",
+      "amount": -200,
+      "category": "educacao",
+      "type": "expense",
+      "date": "2026-04-16T14:51:01.157Z",
+      "createdAt": "2026-04-16T14:51:01.186Z"
+    },
+    {
+      "id": "f43a892f-df6a-45b4-b168-ddd677eed0a9",
+      "description": "Terapia",
+      "amount": -30,
+      "category": "bem-estar",
+      "type": "expense",
+      "date": "2026-04-16T14:51:19.441Z",
+      "createdAt": "2026-04-16T14:51:19.466Z"
+    },
+    {
+      "id": "80b66520-8282-4d3e-967e-d42109e5b7a3",
+      "description": "Freelance",
+      "amount": 800,
+      "category": "salario",
+      "type": "income",
+      "date": "2026-04-16T14:56:37.681Z",
+      "createdAt": "2026-04-16T14:56:37.708Z"
     }
   ]
 }

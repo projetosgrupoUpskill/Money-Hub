@@ -3,11 +3,16 @@ import styles from "./styles/TransactionList.module.css";
 import Card from "./Card.jsx";
 
 export default function TransactionList({ transactions, onDelete, categoryFilterComponent, dateFilterComponent }) {
+  
+  const sortedTransactions = [...transactions].sort((a, b) => { 
+    return new Date(b.date) - new Date(a.date);
+  });
+  
   return (
     <div className={styles.container}>
       <Card title="Lista de Transacções">
 
-      {transactions.length === 0 ? (
+      {sortedTransactions === 0 ? (
         <div className={styles.emptyState}>
           <p className={styles.emptyText}>Ainda não há transacções.</p>
         </div>
@@ -21,7 +26,7 @@ export default function TransactionList({ transactions, onDelete, categoryFilter
           </div>
 
           <div className={styles.scrollArea}>
-            {transactions.map((t, index) => (
+            {sortedTransactions.map((t, index) => (
               <TransactionItem
                 key={t.id}
                 transaction={t}

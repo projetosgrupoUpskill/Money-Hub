@@ -1,4 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 import { getTransactions, deleteTransaction } from "../api";
 import Summary from "../components/Summary";
 import TransactionList from "../components/TransactionList";
@@ -7,6 +8,8 @@ import styles from "../App.module.css";
 
 const Dashboard = () => {
     const queryClient = useQueryClient();
+
+    const [typeFilter, setTypeFilter] = useState("all");
 
     const { data: transactions = [], isLoading, isError } = useQuery({
         queryKey: ["transactions"],
@@ -31,18 +34,26 @@ const Dashboard = () => {
 
     const balance = income - expense;
 
+    const filteredTransactions = transactions.filter(t => {
+        if (typeFilter === "all") return true;
+        if (typeFilter === "income" && t.amount > 0) return true;
+        if (typeFilter === "expense" && t.amount < 0) return true;
+        return false;
+    });
+
     return (
         <>
             <Summary
                 balance={balance}
                 income={income}
                 expense={expense}
+                onCardClick={(type) => setTypeFilter(type)}
             />
 
             <div className={styles.gridTwoColumns}>
                 <div className={styles.listColumn}>
                     <TransactionList
-                        transactions={transactions}
+                        transactions={filteredTransactions}
                         onDelete={(id) => deleteMutation.mutate(id)}
                     />
                 </div>

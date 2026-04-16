@@ -63,8 +63,9 @@ export default function ExpenseChart({ data }) {
             dataKey="despesa"
             stackId="a"
             fill="#EF4444"
-            radius={[10, 10, 0, 0]}
+            radius={[2, 2, 0, 0]}
             name="Despesas"
+            barSize={70}
           />
           <Bar
             dataKey="receita"

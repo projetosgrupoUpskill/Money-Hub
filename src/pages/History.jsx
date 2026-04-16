@@ -88,7 +88,8 @@ const Details = () => {
         return false;
 
       // Filtro de Tipo (opcional, se usar)
-      if (filter.type !== "all" && t.type !== filter.type) return false;
+      if (filter.type === "income" && t.type !== "income" && t.amount <= 0) return false;
+      if (filter.type === "expense" && t.type !== "expense" && t.amount >= 0) return false;
 
       // Filtro de Datas
       if (t.date) {

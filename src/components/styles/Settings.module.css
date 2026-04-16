@@ -63,7 +63,7 @@
 .toggleSwitch {
     width: 50px;
     height: 28px;
-    background-color: #16325d;
+    background-color: #123022;
     /* Cor cinza (inativo) */
     border-radius: 9999px;
     border: none;
@@ -91,7 +91,7 @@
 
 /* Estado LIGADO (Cores fiéis à imagem partilhada) */
 .toggleSwitch[data-active="true"] {
-    background-color: #6366f1;
+    background-color: #1A7A5E;
     /* Azul/roxo (Active) */
 }
 

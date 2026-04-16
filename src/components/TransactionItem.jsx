@@ -21,13 +21,13 @@ export default function TransactionItem({ transaction, onDelete, isEven }) {
         <div className={`${styles.row} ${isEven ? styles.rowEven : styles.rowOdd}`}>
             {/* Descrição */}
             <div className={styles.description}>
-                {transaction.categoryIcon ? (
+                {transaction.category ? (
                     <img
-                        src={`http://localhost:3001/api/${transaction.categoryIcon}`}
-                        alt={transaction.category}
-                        width={20}
-                        style={{ marginRight: '10px' }} // Espaço entre o ícone e o texto
-                    />
+                    src={`http://localhost:3001/api/categories/${transaction.category}/icon`}
+                    alt={transaction.category}
+                    width={20}
+                    style={{ width: "20px", height: "20px", marginRight: "12px", objectFit: "contain" }}
+                />
                 ) : (
 
                     <div className={`${styles.indicator} ${isIncome ? styles.indicatorIncome : styles.indicatorExpense}`} />
