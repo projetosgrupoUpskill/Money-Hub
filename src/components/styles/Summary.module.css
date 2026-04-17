@@ -14,7 +14,6 @@
 
 .balanceCard {
   border: 2px solid #001f3f;
-
 }
 
 .cardHeader {
@@ -44,21 +43,61 @@
 /* Estilos Base (Light Mode) para os Cartões */
 .balanceCard {
   cursor: pointer;
+  position: relative;
   background-color: white;
+  border: 2px solid #001f3f;
+}
+
+.balanceCard:hover {
+  background-color: #f3f4f6;
+  border: 2px solid #003d7a;
 }
 
 .incomeCard {
   cursor: pointer;
-  background-color: #00A63E1A; /* Verde clarinho */
-  border: 1px solid #00A63E;
-  color: #00A63E ;
+  position: relative;
+  background-color: #00a63e1a; 
+  border: 2px solid #00a63e;
+  color: #00a63e;
+}
+
+.incomeCard:hover {
+  background-color: #00a63e33;
+  border: 2px solid #007a2e;
 }
 
 .expenseCard {
   cursor: pointer;
-  background-color: #E7000B1A; /* Vermelho clarinho */
-  border: 1px solid #E7000B;
-  color: #E7000B;
+  position: relative;
+  background-color: #e7000b1a;
+  border: 2px solid #e7000b;
+  color: #e7000b;
+}
+
+.expenseCard:hover {
+  background-color: #e7000b33;
+  border: 2px solid #a80008;
+}
+
+/* Estilos do Ícone para os Cartões */
+.eyeIcon {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
+.balanceCard .eyeIcon {
+  color: #001f3f;
+}
+
+.incomeCard .eyeIcon {
+  color: #00a63e;
+}
+
+.expenseCard .eyeIcon {
+  color: #e7000b;
 }
 
 @media (min-width: 768px) {
@@ -66,8 +105,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-
 
 /* =======================================================
    DARK MODE PARA O SUMMARY
@@ -89,10 +126,9 @@
 
 :global(body.dark) .expenseCard .cardTitle,
 :global(body.dark) .expenseValue {
-  color: #f87171 !important; 
+  color: #f87171 !important;
 }
 
-/* NOVA REGRA A ADICIONAR AQUI: Remove o fundo escuro do cabeçalho de dentro dos cartões */
 :global(body.dark) .cardHeader,
 :global(body.dark) .cardTitle {
   background-color: transparent !important;
@@ -101,4 +137,36 @@
 :global(body.dark) .balanceCard {
   background-color: rgba(173, 178, 180, 0.489) !important;
   border-color: #e3dbdb !important;
+}
+
+:global(body.dark) .balanceCard .eyeIcon {
+  color: #babdc2 !important;
+}
+
+:global(body.dark) .incomeCard .eyeIcon {
+  color: #4ade80 !important ;
+}
+
+:global(body.dark) .expenseCard .eyeIcon {
+  color: #f87171 !important ;
+}
+
+/* =======================================================
+   DARK MODE - HOVER DOS CARDS
+======================================================= */
+:global(body.dark) .balanceCard:hover {
+  background-color: rgba(173, 178, 180, 0.65) !important;
+  border-color: #ffffff !important;
+}
+
+:global(body.dark) .incomeCard:hover {
+  background-color: rgba(74, 222, 128, 0.28) !important;
+  border-color: #4ade80 !important;
+  border-width: 2px !important;
+}
+
+:global(body.dark) .expenseCard:hover {
+  background-color: rgba(248, 113, 113, 0.28) !important;
+  border-color: #f87171 !important;
+  border-width: 2px !important;
 }

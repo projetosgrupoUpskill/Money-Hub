@@ -1,12 +1,7 @@
-// Componente de Resumo Financeiro (Summary) que exibe o saldo atual, total de receitas e total de despesas. 
-// Ele utiliza o PreferencesContext para acessar as preferências do usuário, como a moeda selecionada e o nome 
-// do usuário, personalizando a experiência. O componente é estilizado para destacar visualmente os valores de
-// saldo, receitas e despesas, e inclui uma funcionalidade de clique para permitir que os usuários filtrem as
-// transações com base na categoria (todas, receitas ou despesas) ao clicar nos respectivos cartões.
-
 import { useContext } from "react";
 import { PreferencesContext } from "../context/PreferencesContext";
 import styles from "./styles/Summary.module.css";
+import { FiEye } from "react-icons/fi";
 
 export default function Summary({ balance, income, expense, onCardClick }) {
   const { currency, userName } = useContext(PreferencesContext);
@@ -21,7 +16,14 @@ export default function Summary({ balance, income, expense, onCardClick }) {
   return (
     <div className={styles.summaryGrid}>
       {userName && (
-        <h2 style={{gridColumn: "1 / -1", marginBottom: "10px", color: "var(--text-h)", textAlign: "left"}}>
+        <h2
+          style={{
+            gridColumn: "1 / -1",
+            marginBottom: "10px",
+            color: "var(--text-h)",
+            textAlign: "left",
+          }}
+        >
           Olá, {userName}!
         </h2>
       )}
@@ -34,9 +36,17 @@ export default function Summary({ balance, income, expense, onCardClick }) {
         <div className={styles.cardHeader}>
           <h3 className={styles.cardTitle}>Saldo Atual</h3>
         </div>
-        <p className={`${styles.value} ${balance >= 0 ? styles.balancePositive : styles.balanceNegative}`}>
+        <p
+          className={`${styles.value} ${balance >= 0 ? styles.balancePositive : styles.balanceNegative}`}
+        >
           {formatCurrency(balance)}
         </p>
+        <FiEye
+          size={18}
+          strokeWidth={1.5}
+          className={styles.eyeIcon}
+          title="Remover Filtros"
+        />
       </div>
 
       {/* Card de Receitas */}
@@ -50,6 +60,12 @@ export default function Summary({ balance, income, expense, onCardClick }) {
         <p className={`${styles.value} ${styles.incomeValue}`}>
           {formatCurrency(income)}
         </p>
+        <FiEye
+          size={18}
+          strokeWidth={1.5}
+          className={styles.eyeIcon}
+          title="Filtrar Receitas"
+        />
       </div>
 
       {/* Card de Despesas */}
@@ -63,6 +79,12 @@ export default function Summary({ balance, income, expense, onCardClick }) {
         <p className={`${styles.value} ${styles.expenseValue}`}>
           {formatCurrency(expense)}
         </p>
+        <FiEye
+          size={18}
+          strokeWidth={1.5}
+          className={styles.eyeIcon}
+          title="Filtrar Despesas"
+        />
       </div>
     </div>
   );

@@ -22,15 +22,6 @@ import Details from "./pages/History";
 const queryClient = new QueryClient();
 
 function App() {
-/*   const { isDarkMode } = useContext(PreferencesContext);
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
-  }, [isDarkMode]); */
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
@@ -43,7 +34,7 @@ function App() {
                 <Route index element={<Dashboard />} />
 
                 <Route path="adicionar" element={<AddTransaction />} />
-                <Route path="details" element={<Details/>} />
+                <Route path="details" element={<Details />} />
                 <Route path="about" element={<ContactCard />} />
                 <Route path="settings" element={<Settings />} />
 

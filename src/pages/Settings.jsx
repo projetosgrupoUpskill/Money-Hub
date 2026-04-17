@@ -65,7 +65,3 @@ export default function Settings() {
     </div>
   );
 }
-
-// Página de Configurações (Settings) que permite aos usuários personalizar suas preferências, 
-// como o tema visual (dark mode), a moeda principal e o nome de usuário. O componente utiliza 
-// os contextos de preferências e tema para acessar e atualizar as configurações do usuário.

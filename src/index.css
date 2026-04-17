@@ -134,7 +134,7 @@ body.dark * {
     border-color 0.3s ease;
 }
 
-/* 1. Tudo o que era texto escuro fica branco */
+/* Tudo o que era texto escuro fica branco */
 body.dark h1,
 body.dark h2,
 body.dark h3,
@@ -154,7 +154,7 @@ body.dark [class*="date"] {
   color: var(--text-muted) !important;
 }
 
-/* 2. Fundos de cartões, listas e página ficam escuros */
+/* Fundos de cartões, listas e página ficam escuros */
 body.dark [class*="card"],
 body.dark [class*="Card"],
 body.dark [class*="container"],
@@ -176,14 +176,13 @@ body.dark [class*="rowOdd"] {
   border-color: var(--border) !important;
 }
 
-/* Campos de preenchimento (Inputs e Selects) */
 body.dark input,
 body.dark select,
 body.dark [class*="searchInput"] {
   background-color: var(--card-bg-alt) !important;
   color: var(--text-h) !important;
   border: 1px solid var(--border) !important;
-  color-scheme: dark; /* Passa o calendário nativo para modo noturno */
+  color-scheme: dark;
 }
 
 body.dark [class*="cardTitle"],

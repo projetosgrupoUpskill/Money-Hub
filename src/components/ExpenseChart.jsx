@@ -1,11 +1,3 @@
-// Componente de Gráfico de Despesas (Expense Chart) utilizando a biblioteca Recharts para exibir 
-// despesas e receitas em formato de gráfico de barras. O componente adapta suas cores com base 
-// no tema atual (escuro ou claro) utilizando o ThemeContext. Ele inclui um container responsivo 
-// para garantir que o gráfico se ajuste a diferentes tamanhos de tela e formata os valores do eixo 
-// Y como moeda. O tooltip (balão de informações) é estilizado para combinar com o tema, proporcionando 
-// uma experiência de usuário consistente.
-
-
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import {

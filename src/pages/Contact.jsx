@@ -16,8 +16,7 @@ const contacts = [
     studentNumber: 219,
     gitHubLink: "https://github.com/natipinho",
   },
-]; // Array de contatos. Cada contato é representado por um objeto com um ID único. Esses dados são 
-// renderizados dinamicamente na interface do usuário para criar cartões de contato.
+];
 
 function ContactCard() {
   const contactDetails = contacts.map((contact) => (

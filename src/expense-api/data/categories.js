@@ -117,7 +117,7 @@ const categories = [
     slug: "salario",
     label: "Salário",
     labelEn: "Salary",
-    color: "#22C55E", /* Verde dinheiro */
+    color: "#22C55E" /* Verde dinheiro */,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="2" y="6" width="20" height="12" rx="2" />
       <circle cx="12" cy="12" r="2" />
@@ -144,6 +144,16 @@ const categories = [
       <circle cx="12" cy="12" r="10"/>
       <line x1="12" y1="8" x2="12" y2="12"/>
       <line x1="12" y1="16" x2="12.01" y2="16"/>
+    </svg>`,
+
+    /* Ícone para filtrar pelos cards */
+    slug: "visualizacao",
+    label: "Visualização",
+    labelEn: "View",
+    color: "#6b7280",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+      <circle cx="12" cy="12" r="3" />
     </svg>`,
   },
 ];

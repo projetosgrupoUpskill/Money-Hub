@@ -1,10 +1,3 @@
-// Componente de Item de Transação (TransactionItem) que exibe os detalhes de uma transação individual,
-// incluindo descrição, data, valor e ações. Ele utiliza o PreferencesContext para acessar a moeda selecionada 
-// pelo usuário e formata o valor da transação de acordo. O componente também diferencia visualmente entre 
-// receitas e despesas, e inclui um botão de exclusão para permitir que os usuários removam transações indesejadas. 
-// O layout é organizado em colunas para facilitar a leitura e a interação, e as cores são adaptadas para destacar as 
-// diferentes categorias de transações.
-
 import { FiTrash } from "react-icons/fi";
 import styles from "./styles/TransactionItem.module.css";
 import { useContext } from "react";
@@ -30,7 +23,7 @@ export default function TransactionItem({ transaction, onDelete, isEven }) {
             <div className={styles.description}>
                 {transaction.category ? (
                     <img
-                    src={`http://localhost:3001/api/categories/${transaction.category}/icon`}
+                    src={`http://localhost:3001/api/categories/${transaction.category}/icon`} //apanhamos os ícones fornecidos pela API aqui
                     alt={transaction.category}
                     width={20}
                     style={{ width: "20px", height: "20px", marginRight: "12px", objectFit: "contain" }}

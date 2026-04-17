@@ -45,12 +45,3 @@ export default function TransactionList({ transactions, onDelete, categoryFilter
     </div>
   );
 }
-
-// Componente de Lista de Transações (TransactionList) que exibe uma lista de transações financeiras em um formato
-// de tabela com colunas para descrição, data, valor e ações. Ele utiliza o ThemeContext para adaptar as cores do 
-// componente de acordo com o tema atual (escuro ou claro) e inclui um estado vazio para quando não houver 
-// transações a exibir. O componente também recebe componentes de filtro de categoria e data como props, 
-// permitindo que os usuários filtrarem as transações exibidas com base em suas preferências. 
-// A lista de transações é ordenada por data, exibindo as transações mais recentes primeiro, e inclui um botão
-// de exclusão para cada transação, permitindo que os usuários removam transações indesejadas. O layout é organizado 
-// em colunas para facilitar a leitura e a interação.

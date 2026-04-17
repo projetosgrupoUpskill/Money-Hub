@@ -42,9 +42,3 @@ export function PreferencesProvider({ children }) {
     </PreferencesContext.Provider>
   )
 }
-
-// Contexto de Preferências (PreferencesContext) que gerencia as preferências do usuário, como a moeda principal, 
-// o nome de usuário e o tema visual. Ele utiliza o localStorage para persistir essas preferências entre sessões, 
-// garantindo que as configurações do usuário sejam mantidas mesmo após fechar o navegador. O contexto fornece 
-// funções para atualizar cada preferência, permitindo que os componentes do aplicativo acessem e modifiquem 
-// facilmente as configurações do usuário.
