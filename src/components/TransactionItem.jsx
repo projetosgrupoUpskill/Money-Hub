@@ -9,7 +9,9 @@ export default function TransactionItem({ transaction, onDelete, isEven }) {
     const { currency } = useContext(PreferencesContext);
 
     const formatCurrency = (amount) => {
-        return new Intl.NumberFormat('pt-PT', {
+        const locale = currency === 'BRL' ? 'pt-BR' : 'pt-PT'
+
+        return new Intl.NumberFormat(locale, {
             style: 'currency',
             currency: currency || 'EUR',
 

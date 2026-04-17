@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import styles from "./Contact.module.css";
+import styles from "../components/styles/Contact.module.css";
 
 const contacts = [
   {

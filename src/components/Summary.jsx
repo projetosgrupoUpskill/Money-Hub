@@ -7,7 +7,9 @@ export default function Summary({ balance, income, expense, onCardClick }) {
   const { currency, userName } = useContext(PreferencesContext);
 
   const formatCurrency = (value) => {
-    return new Intl.NumberFormat("pt-PT", {
+    const locale = currency === 'BRL' ? 'pt-BR' : 'pt-PT'
+
+    return new Intl.NumberFormat(locale, {
       style: "currency",
       currency: currency,
     }).format(value);

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from "./AddTransaction.module.css"
+import styles from "../components/styles/AddTransaction.module.css"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createTransaction, getCategories } from "../api";
 import Card from "../components/Card";
