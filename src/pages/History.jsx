@@ -96,7 +96,7 @@ const Details = () => {
   const filteredTransactions =
     transactions?.filter((t) => {
       // Filtro de Categoria
-      if (filter.activeCategory && t.category !== filter.activeCategory)
+      if (filter.activeCategory && filter.activeCategory !== "all" && t.category !== filter.activeCategory)
         return false;
 
       // Filtro de Tipo (opcional, se usar)
